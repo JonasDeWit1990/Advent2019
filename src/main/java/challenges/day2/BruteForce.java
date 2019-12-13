@@ -9,7 +9,7 @@ public class BruteForce {
         int[] solution = new int[] {-1,-1};
         for(int noun = 0; noun < 100; noun++) {
             for(int verb = 0; verb < 100; verb++) {
-                if(solutionNumber == intCodeMachine.retrievePositionValueAfterLogic(0, pathName, noun, verb)) {
+                if(solutionNumber == intCodeMachine.retrievePositionValueAfterLogicWithAlteration(0, pathName, noun, verb)) {
                     solution[0] = noun;
                     solution[1] = verb;
                 }

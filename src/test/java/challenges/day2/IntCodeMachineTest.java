@@ -14,8 +14,8 @@ class IntCodeMachineTest {
 
     @Test
     void testInputConversion() throws IOException {
-        List<Integer> intCodeToCheck = intCodeMachine.convertStringInputToIntArray("src/test/resources/day2/intCodes.txt");
-        List<Integer> assertCode = new ArrayList<>(Arrays.asList(1,0,0,3));
+        var intCodeToCheck = intCodeMachine.convertStringInputToIntArray("src/test/resources/day2/intCodes.txt");
+        var assertCode = new ArrayList<>(Arrays.asList(1,0,0,3));
         assertEquals(assertCode, intCodeToCheck);
     }
 
@@ -32,12 +32,12 @@ class IntCodeMachineTest {
 
     @Test
     void testLogicFromFile() throws IOException {
-        List<Integer> output = intCodeMachine.operationLogicOnFileInput("src/test/resources/day2/intCodes12.txt", 12, 2);
+        List<Integer> output = intCodeMachine.operationLogicOnFileInputWithAlteration("src/test/resources/day2/intCodes12.txt", 12, 2);
         assertEquals(2,output.get(3));
     }
 
     @Test
     void RetrieveCorrectValueAfterLogic() throws IOException {
-        assertEquals(2, intCodeMachine.retrievePositionValueAfterLogic(3,"src/test/resources/day2/intCodes12.txt", 12,2));
+        assertEquals(2, intCodeMachine.retrievePositionValueAfterLogicWithAlteration(3,"src/test/resources/day2/intCodes12.txt", 12,2));
     }
 }
