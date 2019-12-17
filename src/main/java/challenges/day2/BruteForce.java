@@ -1,5 +1,7 @@
 package challenges.day2;
 
+import shared.IntCodeMachine;
+
 import java.io.IOException;
 
 public class BruteForce {

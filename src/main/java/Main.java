@@ -1,8 +1,10 @@
 import challenges.day1.FuelCalculator;
 import challenges.day2.BruteForce;
-import challenges.day2.IntCodeMachine;
+import shared.IntCodeMachine;
 import challenges.day3.ManhattanDistance;
 import challenges.day4.PasswordCounter;
+import challenges.day6.Space;
+import challenges.day7.AmplifierSerie;
 
 import java.io.IOException;
 
@@ -13,8 +15,10 @@ public class Main {
         BruteForce bruteForce = new BruteForce();
         ManhattanDistance manhattanDistance = new ManhattanDistance();
         PasswordCounter passwordCounter = new PasswordCounter();
+        Space space = new Space();
+        AmplifierSerie amp = new AmplifierSerie();
 
-
+        /*
         System.out.println("Challenge 1a solution: " + fuelCalculator.calculateFuelFromFile("src/main/resources/challengeInputs/day1.txt"));
         System.out.println("Challenge 1b solution: " + fuelCalculator.calculateExtraFuelFromFile("src/main/resources/challengeInputs/day1.txt"));
 
@@ -32,9 +36,17 @@ public class Main {
 
 
         System.out.println("-----------------------------------------");
-        System.out.println("Challenge 5a solution: ");
-        intCode.executeDay5Logic("src/main/resources/challengeInputs/day5.txt", 1);
-        System.out.println("Challenge 5b solution: ");
-        intCode.executeDay5Logic("src/main/resources/challengeInputs/day5.txt", 5);
+        System.out.print("Challenge 5a solution: " + intCode.executeDay5Logic("src/main/resources/challengeInputs/day5.txt", Arrays.asList(1)));
+        System.out.print("\nChallenge 5b solution: " + intCode.executeDay5Logic("src/main/resources/challengeInputs/day5.txt", Arrays.asList(5)));
+
+        System.out.println("\n-----------------------------------------");
+        space.readOrbitsFromFile("src/main/resources/challengeInputs/day6.txt");
+        System.out.println("Challenge 6a solution: " + space.calculateGalacticDistance());
+        System.out.println("Challenge 6b solution: " + space.calculateMoveDistance());
+
+         */
+        System.out.println("\n-----------------------------------------");
+        System.out.println("Challenge 7a solution: " + amp.iterateAmplifier("src/main/resources/challengeInputs/day7.txt", 0));
+        System.out.println("Challenge 7b solution: ");
     }
 }

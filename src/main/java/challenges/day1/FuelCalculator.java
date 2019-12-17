@@ -24,7 +24,7 @@ public class FuelCalculator {
         return total;
     }
 
-    public int calculateFuelFromFile(String pathOfFile) throws IOException {
+    public int calculateFuelFromFile(String pathOfFile) {
         try {
             Stream<String> input = Files.lines(Paths.get(pathOfFile));
 
@@ -38,7 +38,7 @@ public class FuelCalculator {
         }
     }
 
-    public int calculateExtraFuelFromFile(String pathOfFile) throws IOException {
+    public int calculateExtraFuelFromFile(String pathOfFile) {
         try {
             Stream<String> input = Files.lines(Paths.get(pathOfFile));
 

@@ -1,5 +1,6 @@
 package challenges.day2;
 
+import shared.IntCodeMachine;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -14,9 +15,9 @@ class IntCodeMachineTest {
 
     @Test
     void testInputConversion() throws IOException {
-        var intCodeToCheck = intCodeMachine.convertStringInputToIntArray("src/test/resources/day2/intCodes.txt");
+        intCodeMachine.loadProgramFromFile("src/test/resources/day2/intCodes.txt");
         var assertCode = new ArrayList<>(Arrays.asList(1,0,0,3));
-        assertEquals(assertCode, intCodeToCheck);
+        assertEquals(assertCode, intCodeMachine.);
     }
 
     @Test

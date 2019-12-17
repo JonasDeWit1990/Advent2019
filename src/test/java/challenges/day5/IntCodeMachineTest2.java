@@ -1,12 +1,10 @@
 package challenges.day5;
 
-import challenges.day2.IntCodeMachine;
+import shared.IntCodeMachine;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,32 +13,32 @@ class IntCodeMachineTest2 {
 
    @Test
     void testInputAndOutput() throws IOException{
-       intCodeMachine.setInputForLogic(20);
+       intCodeMachine.setInputForLogic(Arrays.asList(20));
        assertEquals(20, intCodeMachine.retrievePositionValueAfterLogic(0,"src/test/resources/day5/inputOutput.txt"));
    }
 
    @Test
    void testCompareModule() throws IOException{
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", 8);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", 7);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", 9);
+       assertEquals("0",intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", Arrays.asList(8)));
+       assertEquals("1",intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", Arrays.asList(7)));
+       assertEquals("1",intCodeMachine.executeDay5Logic("src/test/resources/day5/comparePositionMode.txt", Arrays.asList(9)));
 
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", 8);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", 7);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", 9);
+       assertEquals("0",intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", Arrays.asList(8)));
+       assertEquals("0",intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", Arrays.asList(7)));
+       assertEquals("1",intCodeMachine.executeDay5Logic("src/test/resources/day5/compareImmediateMode.txt", Arrays.asList(9)));
 
    }
 
    @Test
    void testJumpModule() throws IOException {
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/jumpTest", 8);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/jumpTest", 0);
+       intCodeMachine.executeDay5Logic("src/test/resources/day5/jumpTest", Arrays.asList(8));
+       intCodeMachine.executeDay5Logic("src/test/resources/day5/jumpTest", Arrays.asList(0));
    }
 
    @Test
     void test5b() throws IOException {
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", 7);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", 8);
-       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", 9);
+       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", Arrays.asList(7));
+       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", Arrays.asList(8));
+       intCodeMachine.executeDay5Logic("src/test/resources/day5/5b.txt", Arrays.asList(9));
    }
 }
